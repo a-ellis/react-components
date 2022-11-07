@@ -70,7 +70,7 @@ export interface SliderProps extends React.InputHTMLAttributes<HTMLInputElement>
   /** Sets the `disabled` state of relevant HTML elements within the Slider and prevents interactivity that would update `value`. */
   disabled?: boolean;
   /** Callback function invoked when the Slider's `value` changes. */
-  onChange?: (event: React.SyntheticEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -129,7 +129,8 @@ export function Slider({
           min={roundedMin}
           max={roundedMax}
           value={value}
-          onChange={onChange}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={onChange || (() => {})}
         />
       </Handle>
     </StyledRoot>

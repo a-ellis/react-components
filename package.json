@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nx storybook components",
-    "build": "nx build",
-    "test": "nx test",
+    "build": "nx build components",
+    "pack:lib": "cd ./dist/libs/components && npm pack",
+    "test": "nx test components",
     "test:e2e": "nx e2e components-e2e",
     "test:e2e:watch": "nx e2e components-e2e -- --watch"
   },
