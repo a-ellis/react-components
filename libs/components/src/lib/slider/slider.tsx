@@ -108,7 +108,16 @@ export function Slider({
   });
 
   return (
-    <StyledRoot ref={rootRef} disabled={disabled} color={color} hasValueLabel={hasValueLabel}>
+    <StyledRoot
+      ref={rootRef}
+      disabled={disabled}
+      color={color}
+      hasValueLabel={hasValueLabel}
+      role="slider"
+      aria-valuemin={roundedMin}
+      aria-valuemax={roundedMax}
+      aria-valuenow={value}
+    >
       <Rail />
       <Track offset={trackingOffset} scale={trackingScale} isAnimated={!dragging} />
 
